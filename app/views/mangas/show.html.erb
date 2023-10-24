@@ -1,0 +1,27 @@
+<h3>マンガ詳細</h3>
+<div class="manga">
+  <p><%= @manga.title %></p>
+  <p><%= @manga.created_at %></p>
+  <% if user_signed_in? %>
+  <% if current_user.already_liked?(@manga) %>
+    <%= button_to manga_like_path(@manga), method: :delete do %>
+      <p>いいねを取り消す</p><%= @manga.likes.count %>
+    <% end %>
+  <% else %>
+    <%= button_to manga_likes_path(@manga), method: :post do %>
+      <p>いいね</p><%= @manga.likes.count %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>いいねの数 = </p><%= @manga.likes.count %>
+<% end %>
+
+</div>
+
+h2>いいねしたユーザー</h2>
+<% @manga.liked_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+<%= link_to "マンガ一覧に戻る", mangas_path %>
+<%= link_to "編集する", edit_manga_path(@manga.id) %>

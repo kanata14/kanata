@@ -1,0 +1,12 @@
+<%= form_for @manga do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, :size => 140 %>
+    <%= f.label :author %>
+    <%= f.text_field :author, :size => 140 %>
+    <%= f.label :arasuzi %>
+    <%= f.text_field :arasuzi, :size => 140 %>
+    <%= f.label :kansou %>
+    <%= f.text_field :kansou, :size => 140 %>
+    
+    <%= f.submit "編集する" %>
+  <% end %>
