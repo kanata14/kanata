@@ -18,11 +18,10 @@
     margin: 0;
   }
   body {
-    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
-      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+font-family: 'Noto Sans JP', sans-serif;
   }
   header {
-    background-color: #14b544;
+    background-color: #0d421d;
     height: 80px;
     font-weight: bold;
     display: flex;
@@ -51,7 +50,7 @@
   footer {
     color: white;
     height: 30px;
-    background-color: #0fcb57;
+    background-color: #0d421d;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -59,3 +58,5 @@
     position: fixed;
     justify-content: flex-end;
   }
+
+ 
