@@ -1,0 +1,21 @@
+databases:
+  - name: mangaosu_db
+    databaseName: mangaosu_db
+    user: mangaosu
+    region: singapore
+
+services:
+  - type: web
+    name: mangaosu
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mangaosu_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
