@@ -1,26 +1,35 @@
-<h3>新規投稿ページ</h3>
+<div class="sinki"><h3>新規投稿ページ</h3><br>
 <%= form_for @manga do |f| %>
 
 
   <div class="field">
     <%= f.label :タイトル %>
-    <%= f.text_field :title, :size => 30 %>
+    <%= f.text_field :title, :size => 45 %>
   </div>
 
   <div class="field">
     <%= f.label :著者 %>
-    <%= f.text_field :author, :size => 30 %>
+    <%= f.text_field :author, :size => 40 %>
   </div>
 
   <div class="field">
-    <%= f.label :あらすじ  %>
-    <%= f.text_area :arasuzi, :size => "30x2" %>
+  <div class="field1">
+  &emsp;&emsp;&emsp;&emsp;&emsp;<%= f.label :写真 %>
+  <%= f.file_field :image %>
+  </div>
+  </div>
+
+
+  <div class="field">
+  &emsp; <%= f.label :あらすじ  %>
+    <%= f.text_area :arasuzi, :size => "50x4" %>
   </div>
 
   <div class="field">
-    <%= f.label :感想  %>
-    <%= f.text_area :kansou, :size => "30x2" %>
+  &emsp;&emsp;&emsp;<%= f.label :感想  %>
+    <%= f.text_area :kansou, :size => "50x4" %>
   </div>
+  
   <h5>総合評価</h5>
      <div class="post_form">
         <%= f.radio_button :overall, 5 ,id: 'star1'%>
@@ -39,12 +48,8 @@
         <label for="star5"><span class="text">最悪</span>★</label>
      </div>
 
-  <div class="field">
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  </div>
-
   <%= f.submit "投稿する" %>
   <% end %>
 
 <%= link_to "一覧に戻る", mangas_path %>
+</div>

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources:mangas do
     resources :likes, only: [:create, :destroy]
 end
-root'mangas#index'
+
+root'mangas#top'
 end
 
 

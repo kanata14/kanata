@@ -1,4 +1,6 @@
 <%= form_for @manga do |f| %>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %><br>
     <%= f.label :title %>
     <%= f.text_field :title, :size => 140 %>
     <%= f.label :author %>

@@ -69,17 +69,85 @@
     
   }
   .manga {
+    background-color: #e8e6e6;
     width: 50% ;
-    text-align: center;
+  text-align: center;  
   border: 2px solid #83817b;
   padding: 5%;
   margin: auto;
   margin-top: 5%;
   }
 
+  .itiran1{
+    
+  }
+
+
   .itiran{
     text-align: center;
   }
   
+  .tophaikei{
+    background-image: url("haikei.jpg");
+    text-align: left;
+    height: 150vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+  }
+  .tophaikei2{
+    text-align: left;
+    padding-top: 450px;
+    padding-left: 20px;
+    font-size: 25px;
+  }
+
+  .kuuhaku{
+    background-color: #ccc;
+  }
   
-  
+  .itiranlink{
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+ .post_form{
+  margin-left: 125px;
+  }
+
+  .tophaikei3{
+
+  }
+
+  .syousai{
+    display: flex;
+    justify-content: center;
+  }
+
+  .syousai1{
+  margin-right: 10px;
+ }
+ .title{
+  display: flex;
+  justify-content: center;
+  }
+ .arasuzi{
+  text-align: left;
+ }
+
+ .tyosya{
+  text-align: left;
+ }
+
+ .kansou{
+  text-align: left;
+ }
+ 
+ .syo{
+  text-align: center;
+ }
+
+ .field1{
+  text-align: left;
+ }

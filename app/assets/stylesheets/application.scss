@@ -21,7 +21,7 @@
 font-family: 'Noto Sans JP', sans-serif;
   }
   header {
-    background-color: #0d421d;
+    background-color: #e8e6e6;
     height: 80px;
     font-weight: bold;
     display: flex;
@@ -29,7 +29,7 @@ font-family: 'Noto Sans JP', sans-serif;
     align-items: center;
   }
   header a {
-    color: white; 
+    color: rgb(10, 10, 10); 
     text-decoration: none; 
   }
   header h1 {
@@ -47,10 +47,13 @@ font-family: 'Noto Sans JP', sans-serif;
     list-style: none;
     margin-right: 40px;
   }
+  .rogo3{
+    width: 15vw;
+  }
   footer {
     color: white;
     height: 30px;
-    background-color: #0d421d;
+    background-color: #0d0d0d;
     bottom: 0;
     width: 100%;
     display: flex;

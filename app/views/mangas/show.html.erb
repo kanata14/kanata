@@ -1,4 +1,4 @@
-<h3>マンガ詳細</h3>
+<br><div class="syo"><h3>マンガ詳細</h3></div>
 <div class="manga">
   <p><%= @manga.title %></p>
   <p><%= @manga.created_at %></p>
@@ -18,10 +18,11 @@
 
 </div>
 
-<h2>いいねしたユーザー</h2>
+<br>
+<h2>&emsp;いいねしたユーザー</h2>
 <% @manga.liked_users.each do |user| %>
   <li><%= user.email %></li>
 <% end %>
 
-<%= link_to "マンガ一覧に戻る", mangas_path %>
-<%= link_to "編集する", edit_manga_path(@manga.id) %>
+&emsp;<%= link_to "マンガ一覧に戻る", mangas_path %>
+&emsp;<%= link_to "編集する", edit_manga_path(@manga.id) %>

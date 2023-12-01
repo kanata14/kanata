@@ -1,41 +1,43 @@
-<div class="itiran"> 
-<h3>一覧ページ</h3>
-<%= link_to "新規投稿へ", new_manga_path %>
-</div>
-<div class="mangas-container">
- <% @rank_mangas.each do |t| %>
+<div class="itiran1">
+    <div class="itiran"> 
+    <br>
+    </div>
+    <div class="mangas-container">
+    <% @rank_mangas.each do |t| %>
     <div class="manga"> 
-    <%= image_tag t.image_url, size: "250x200" if t.image? %>
-    <%= t.title %>
-      <%= t.author %>
-      <%= t.arasuzi %>
-      <%= t.kansou %>
-      <%= link_to "詳細へ", manga_path(t.id) %>
+    <%= image_tag t.image_url, size: "350x250" if t.image? %><br>
+    <div class="title"><h2><%= t.title %></h2>
+      <h2>&emsp;<%= t.author %><br></div>
+      <div class="arasuzi"><h4>&emsp;あらすじ</h4><h6><%= t.arasuzi %><br></h6></div>
+      <div class="kansou"><h4>&emsp;感想<h6><%= t.kansou %><br></h4></div></h6>
+     <div class="syousai"><div class="syousai1"><h6> <%= link_to "詳細へ", manga_path(t.id) %></h6></div>
       <% if user_signed_in? && current_user.id == t.user_id %>
-      <%= link_to "編集する", edit_manga_path(t.id) %>
-      <%= link_to "削除する", manga_path(t.id), method: :delete %>
+      <div class="syousai1"><h6><%= link_to "編集する", edit_manga_path(t.id) %></h6></div>
+      <div class="syousai1"><h6><%= link_to "削除する", manga_path(t.id), method: :delete %></h6></div>
       <% end %>
-      <h2>おすすめ度：
+      </div>
+      <div class="osusume"><h4>おすすめ度：
       <span class="star-rating">
          <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
          <span class="star-rating-back">★★★★★</span>
       </span> 
-      </h2>
+      </h4><br>
       <% if user_signed_in? %>
         <% if current_user.already_liked?(t) %>
-            <%= link_to manga_like_path(id: t.id, manga_id: t.id), method: :delete do %>
-                <p>いいねを取り消す</p><%= t.likes.count %>
+            <%= button_to manga_like_path(id: t.id, manga_id: t.id), method: :delete do %>
+                <p>取り消す</p><%= t.likes.count %>
             <% end %>
         <% else %>
-            <%= link_to manga_likes_path(id: t.id, manga_id: t.id), method: :post do %>
-                <p>いいね</p><%= t.likes.count %>
+            <%= button_to manga_likes_path(id: t.id, manga_id: t.id), method: :post do %>
+                <h3><p>👍<%= t.likes.count %></p></h3>
             <% end %>
         <% end %>
     <% else %>
-        <p>いいねの数 = </p><%= t.likes.count %>
+       <h3><p>👍<%= t.likes.count %></p></h3>
     <% end %>
-   
+   </div>
    
       </div>  
      </div>  
+</div>
   <% end %>

@@ -11,21 +11,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300&family=Noto+Sans+JP:wght@200&display=swap" rel="stylesheet">
-    CSS rules to specify families
     
-    font-family: 'M PLUS 1p', sans-serif;
-    font-family: 'Noto Sans JP', sans-serif;
     
     </head>
 
   <body>
   <header>
-  <h1>おすすめマンガ</h1>
+  <%= image_tag 'rogo3.png', class:'rogo3' %>
+
   <div class="header-list">
   <ul>
+
+    
     <li><%= link_to "ホーム", root_path %></li>
+    <li><%= link_to "一覧", mangas_path %></li>
+    <li><%= link_to "新規投稿", new_manga_path %></li>
     <% if user_signed_in? %>
-     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
     <% else %>
      <li><%= link_to "新規登録", new_user_registration_path %></li>
      <li><%= link_to "ログイン", new_user_session_path %></li>
